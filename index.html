@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+      <header>
+          <div class="container">
+              <div class="logo">
+                  <a href=""><span>red</span>shadow</a>
+              </div>
+              <div class="trigger-main">
+                 <a href="javascript:void(0);" class="ham-burger">
+                    <span></span>
+                    <span></span>
+                 </a>
+              </div>
+              <div class="navbar">
+                  <ul>
+                      <li><a href="#home" class="active">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <li><a href="#portfolio">Portfolio</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#blog">Blog</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                  </ul>
+              </div>
+          </div>
+      </header>
+    <div class="contact-info">
+      <div class="card">
+        <i class="card-icon far fa-envelope"></i>
+        <p>email@domain.com</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-phone"></i>
+        <p>+000000000000</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-map-marker-alt"></i>
+        <p>New York, USA</p>
+      </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+          var bottom=$("header").outerHeight();
+          var header=$("header").offset().top + bottom;
+           $(window).scroll(function(){
+                // header fixed only when window width greater than 991px
+               if($(window).width()>991){
+             if($(window).scrollTop()>=header){
+               $("header").addClass("sticky")
+             }
+             else{
+              $("header").removeClass("sticky")	
+             }
+           }
+           })
+      
+           // navbar active link
+      
+           $(".navbar ul li a").click(function(){
+              $(".navbar ul li a").removeClass("active")
+              $(this).addClass("active");
+           })
+        
+          $(".ham-burger").click(function(){
+            $(this).toggleClass("active")
+            $(".navbar").toggleClass("open");
+          })
+      
+        })
+      
+      </script>
+  </body>
+</html>
